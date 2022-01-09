@@ -1,6 +1,6 @@
 # NBATeamsGameCounter
 Select a date range and this program will output the amount of times every team in the NBA has played (uses web scrapping).  
-Tip: Make sure the start and end dates you input will have games played on those days
+Tip: Make sure the start and end dates you input will have games played on those days or else it will not work properly.
 
 ## Output Example:  
 For 2021/2022 season, between January 3rd to March 6th.
