@@ -133,7 +133,7 @@ for element in elements:
     if any(start in string for string in element):
         foundrange = True
     # if it's the last day then end the range
-    elif any(end in string for string in element):
+    if any(end in string for string in element):
         foundrange = False
     # if the loop is still in the range or on the last day
     if foundrange or any(end in string for string in element):
