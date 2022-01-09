@@ -32,6 +32,7 @@ for month in months:
     indexes.append(allmonths.index(month))
 if numMonths != 1:
     ranges = indexes[1] - indexes[0]
+    # if the range is negative than that means that the range goes into the new year
     if ranges < 0:
         ranges += 13
     else:
@@ -62,6 +63,7 @@ try:
                     "E,W,A,C,SE,NW,P,SW,Pre,Post,≤3,≥10,Oct,Nov,Dec,Jan,Feb,Mar,Apr\n", "")
     datateamrows = datateams.split("\n")
     teamnames = []
+    # grabs all the team names in the NBA into a list
     for i in range(0, len(datateamrows)):
         temp = []
         temp.append(0)
@@ -103,6 +105,7 @@ for i in range(0, ranges):
     finally:
         driver.close()
 
+# translate the months to their smaller parts to match the same format as the one's in the list
 monthdict = {"january": "Jan",
              "february": "Feb",
              "march": "Mar",
@@ -115,29 +118,40 @@ monthdict = {"january": "Jan",
              "october": "Oct",
              "november": "Nov",
              "december": "Dec"}
-
+# this list will keep track of every team name that appears in the range given
 rangelist = []
+# same date format as in the data
 start = monthdict[months[0]] + " " + days[0]
 foundrange = False
 if len(months) == 1:
     end = monthdict[months[0]] + " " + days[1]
 else:
     end = monthdict[months[1]] + " " + days[1]
+
 for element in elements:
+    # once the start range is found than let the program know it can start adding the names to a list
     if any(start in string for string in element):
         foundrange = True
+    # if it's the last day then end the range
     elif any(end in string for string in element):
         foundrange = False
+    # if the loop is still in the range or on the last day
     if foundrange or any(end in string for string in element):
+        # add the NBA team names to the list
         rangelist.append(element[2])
         rangelist.append(element[4])
 print()
 print("-------- LIST OF TEAM'S GAMES IN ORDER FROM THE RANGE GIVEN -----")
 print()
 print(rangelist)
+# list of all the NBA team names, including a counter for each to keep track of how many games they played in the range
 for teamcount in teamnames:
+    # grabs the current team in the range
     for currentteam in rangelist:
+        # if the current team name in the list of the NBA team matches the one in the range, then increment the
+        # number of games played by 1
         if teamcount[1] == currentteam:
+            # and remove the current team instance from the list
             rangelist.remove(teamcount[1])
             teamcount[0] = teamcount[0] + 1
 
