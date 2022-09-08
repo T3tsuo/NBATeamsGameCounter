@@ -49,9 +49,16 @@ for i in range(0, 2):
 # search link with the data
 link = "https://www.basketball-reference.com/leagues/NBA_" + year + "_standings.html"
 # installs local chromes supported driver
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.get(link)
-driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
+try:
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.get(link)
+    driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
+# if the expanded standings have not been made for this year yet then do the year prior
+except:
+    link = "https://www.basketball-reference.com/leagues/NBA_" + str(int(year) - 1) +"_standings.html"
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.get(link)
+    driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
 
 try:
     # grab the csv, without the beginning strings that are not related to the data
