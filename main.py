@@ -147,7 +147,6 @@ for element in elements:
         # add the NBA team names to the list
         rangelist.append(element[2])
         rangelist.append(element[4])
-        print(element[2], "    ", element[4])
 print()
 print("-------- LIST OF TEAM'S GAMES IN ORDER FROM THE RANGE GIVEN -----")
 print()
