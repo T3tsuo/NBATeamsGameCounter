@@ -47,34 +47,34 @@ Driver [/Users/takumicomeau/.wdm/drivers/chromedriver/mac64/97.0.4692.71/chromed
 
 ----- AMOUNT OF GAMES PLAYED PER TEAM IN THE RANGE GIVEN -----
 
-Brooklyn Nets: 31
 Toronto Raptors: 31
-Chicago Bulls: 30
+Brooklyn Nets: 31
 Denver Nuggets: 30
-Golden State Warriors: 29
+Chicago Bulls: 30
+Detroit Pistons: 30
 Memphis Grizzlies: 29
+Golden State Warriors: 29
 Boston Celtics: 29
-Los Angeles Clippers: 29
 Minnesota Timberwolves: 29
-Indiana Pacers: 29
+Los Angeles Clippers: 29
 San Antonio Spurs: 29
+Indiana Pacers: 29
 Phoenix Suns: 28
 Miami Heat: 28
-Philadelphia 76ers: 28
-Charlotte Hornets: 28
 Dallas Mavericks: 28
+Philadelphia 76ers: 28
 Atlanta Hawks: 28
-Sacramento Kings: 28
+Charlotte Hornets: 28
 New Orleans Pelicans: 28
+Sacramento Kings: 28
 Portland Trail Blazers: 28
-Utah Jazz: 27
+Oklahoma City Thunder: 28
+Orlando Magic: 28
 Milwaukee Bucks: 27
+Utah Jazz: 27
 Cleveland Cavaliers: 27
 New York Knicks: 27
 Washington Wizards: 27
-Oklahoma City Thunder: 27
+Houston Rockets: 27
 Los Angeles Lakers: 25
-Houston Rockets: 25
-Detroit Pistons: 22
-Orlando Magic: 17
 ```
