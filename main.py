@@ -147,20 +147,28 @@ for element in elements:
         # add the NBA team names to the list
         rangelist.append(element[2])
         rangelist.append(element[4])
+        print(element[2], "    ", element[4])
 print()
 print("-------- LIST OF TEAM'S GAMES IN ORDER FROM THE RANGE GIVEN -----")
 print()
 print(rangelist)
 # list of all the NBA team names, including a counter for each to keep track of how many games they played in the range
-for teamcount in teamnames:
+i = 0
+while i < len(teamnames):
     # grabs the current team in the range
-    for currentteam in rangelist:
+    k = 0
+    while k < len(rangelist):
         # if the current team name in the list of the NBA team matches the one in the range, then increment the
         # number of games played by 1
-        if teamcount[1] == currentteam:
+        if teamnames[i][1] == rangelist[k]:
             # and remove the current team instance from the list
-            rangelist.remove(teamcount[1])
-            teamcount[0] = teamcount[0] + 1
+            rangelist.remove(teamnames[i][1])
+            teamnames[i][0] = teamnames[i][0] + 1
+        else:
+            # only if we do not remove something from the list than we increment
+            k += 1
+    # since we tallied up our teamcount, go to next team and do the same thing
+    i += 1
 
 teamnames.sort(key=lambda x: x[0], reverse=True)
 print()
