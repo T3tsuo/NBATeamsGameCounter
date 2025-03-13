@@ -52,13 +52,13 @@ link = "https://www.basketball-reference.com/leagues/NBA_" + year + "_standings.
 try:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get(link)
-    driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
+    driver.execute_script("document.getElementsByClassName('tooltip')[2].click()")
 # if the expanded standings have not been made for this year yet then do the year prior
 except:
     link = "https://www.basketball-reference.com/leagues/NBA_" + str(int(year) - 1) +"_standings.html"
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.get(link)
-    driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
+    driver.execute_script("document.getElementsByClassName('tooltip')[2].click()")
 
 try:
     # grab the csv, without the beginning strings that are not related to the data
@@ -87,7 +87,7 @@ for i in range(0, ranges):
     driver.get(link)
 
     # finds specific button that changes the table to a csv format
-    driver.execute_script("document.getElementsByClassName('tooltip')[3].click()")
+    driver.execute_script("document.getElementsByClassName('tooltip')[2].click()")
 
     # wait until the format is completely loaded
     try:
