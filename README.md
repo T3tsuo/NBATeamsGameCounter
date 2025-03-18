@@ -6,9 +6,7 @@ Tip: Make sure the start and end dates you input will have games played on those
 For 2023/2024 season, between November 8th to March 14th.
 ```
 What year? Enter with this format. (ex: 2024):    2024
-Does your range of dates have multiple calendar months in them? 'y' for yes and 'n' for no:    y
-What is/are the starting and ending month(s)? Enter one at a time, in the ORDER you want, with no capital letter. (ex: november):    november
-What is/are the starting and ending month(s)? Enter one at a time, in the ORDER you want, with no capital letter. (ex: november):    march
+What is/are the month(s) with no capital letter. Use this format (ex1: november ex2: november-march):    november-march
 What is the start and finish date?
 ex:
 14

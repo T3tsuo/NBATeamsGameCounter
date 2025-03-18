@@ -14,19 +14,18 @@ allmonths = ["january", "february", "march", "april", "may", "june", "july", "au
 
 # get specific year and month
 year = input("What year? Enter with this format. (ex: 2024):    ")
-numMonths = input("Does your range of dates have multiple calendar months in them? 'y' for yes and 'n' for no:    ")
-if numMonths == 'y':
-    numMonths = 2
-elif numMonths == 'n':
-    numMonths = 1
-else:
-    raise AttributeError
-count = 0
+
+# get months, there are two scenarios: range only has one month for starting/ending range or it has two months
 months = []
-while count < numMonths:
-    months.append(input("What is/are the starting and ending month(s)? Enter one at a time, in the ORDER you want,"
-                        " with no capital letter. (ex: november):    "))
-    count += 1
+monthInput = input("What is/are the month(s) with no capital letter. Use this format (ex1: november ex2: november-march):    ")
+if "-" in monthInput:
+    months = monthInput.split("-")
+else:
+    months.append(monthInput)
+
+# get number if we have one month or two months for starting and ending range
+numMonths = len(months)
+
 indexes = []
 for month in months:
     indexes.append(allmonths.index(month))
