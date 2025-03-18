@@ -13,7 +13,7 @@ allmonths = ["january", "february", "march", "april", "may", "june", "july", "au
                 "november", "december"]
 
 # get specific year and month
-year = input("What year? Enter with this format. (ex: 2022):    ")
+year = input("What year? Enter with this format. (ex: 2024):    ")
 numMonths = input("Does your range of dates have multiple calendar months in them? 'y' for yes and 'n' for no:    ")
 if numMonths == 'y':
     numMonths = 2
@@ -147,28 +147,17 @@ for element in elements:
         # add the NBA team names to the list
         rangelist.append(element[2])
         rangelist.append(element[4])
-print()
-print("-------- LIST OF TEAM'S GAMES IN ORDER FROM THE RANGE GIVEN -----")
-print()
-print(rangelist)
-# list of all the NBA team names, including a counter for each to keep track of how many games they played in the range
-i = 0
-while i < len(teamnames):
-    # grabs the current team in the range
-    k = 0
-    while k < len(rangelist):
-        # if the current team name in the list of the NBA team matches the one in the range, then increment the
-        # number of games played by 1
-        if teamnames[i][1] == rangelist[k]:
-            # and remove the current team instance from the list
-            rangelist.remove(teamnames[i][1])
-            teamnames[i][0] = teamnames[i][0] + 1
-        else:
-            # only if we do not remove something from the list than we increment
-            k += 1
-    # since we tallied up our teamcount, go to next team and do the same thing
-    i += 1
 
+# list of all the NBA team names, including a counter for each to keep track of how many games they played in the range
+for i in range(len(teamnames)):
+    # grab the occurence of a team in the list of all matches in the date range
+    occurences = rangelist.count(teamnames[i][1])
+    # if they played one or more matches
+    if occurences > 0:
+        # then set the amount of matches they played to the list
+        teamnames[i][0] = occurences
+
+# sort by teams with most amount of games played to least
 teamnames.sort(key=lambda x: x[0], reverse=True)
 print()
 print("----- AMOUNT OF GAMES PLAYED PER TEAM IN THE RANGE GIVEN -----")
